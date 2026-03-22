@@ -1,80 +1,54 @@
-</html>
-<head> 
-<title> my builder portfolio 🔨</title>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloc‑Notes</title>
 <style>
-body {
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    font-family:Arial;
-}
-
-.gallery {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:10px;
-    padding:20px;
-}
-
-.gallery img {
-    width:100%;
-    border-radius:10px;
-    transition:0.3s;
-}
-
-.gallery img:hover {
-    transform:scale(1.05);
-}
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+    }
+    textarea {
+        flex: 1;
+        width: 100%;
+        padding: 20px;
+        font-size: 18px;
+        border: none;
+        resize: none;
+        outline: none;
+        background: #fff;
+        box-sizing: border-box;
+    }
+    h1 {
+        margin: 0;
+        padding: 15px;
+        background: #4CAF50;
+        color: white;
+        text-align: center;
+        font-weight: normal;
+    }
 </style>
-
 </head>
 <body>
 
-<p>my Builder portfolio 🛠️<p>
+<h1>Bloc‑Notes</h1>
+<textarea id="note" placeholder="Écris tes idées et tes chose a faire..."></textarea>
 
-<div class="gallery">
-    <img src="https://i.postimg.cc/2SDg0n7c/Screenshot-20260315-155134-com-roblox-client.jpg">
-    <img src="https://i.postimg.cc/gJTK1PFZ/Screenshot-2026-03-18-22-18-08-44-572064f74bd5f9fa804b05334aa4f912.jpg">
-</div>
+<script>
+// Charger le texte sauvegardé
+const note = document.getElementById('note');
+note.value = localStorage.getItem('blocNote') || '';
 
-<p>Roblox Builder🛠️  (Maps, Houses, Obby)</p>
+// Sauvegarder automatiquement à chaque frappe
+note.addEventListener('input', () => {
+    localStorage.setItem('blocNote', note.value);
+});
+</script>
 
-<p>💰 Cheap Prices💰</p></html> </title>
- 
-
-<p> Discord username:
-<p> nolan6776 
-<p> Discord display name:
-<p> the builder🔨 </p>
 </body>
-
-<style>
-body  {
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    font-family:Arial;
-}
-
-.gallery {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:10px;
-    padding:20px;
-}
-
-.gallery img {
-    width:100%;
-    border-radius:10px;
-    transition:0.3s;
-}
-
-.gallery img:hover {
-    transform:scale(1.05);
-}
-</style>
-
-</head>
-<body
-
- 
+</html>

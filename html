@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>World Time App</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #111;
+      color: white;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌍 World Time</h1>
+
+<input type="text" id="country" placeholder="Ex: France, Japan...">
+<button onclick="getTime()">Search</button>
+
+<div id="result"></div>
+
+<script>
+async function getTime() {
+  let country = document.getElementById("country").value;
+
+  // API pour récupérer timezone du pays
+  let res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  let data = await res.json();
+
+  if (!data || data.status === 404) {
+    document.getElementById("result").innerHTML = "Pays non trouvé ❌";
+    return;
+  }
+
+  let timezones = data[0].timezones;
+
+  let output = `<h3>${data[0].name.common}</h3>`;
+
+  for (let tz of timezones) {
+    let timeRes = await fetch(`https://worldtimeapi.org/api/timezone/${tz}`);
+    let timeData = await timeRes.json();
+
+    let time = new Date(timeData.datetime).toLocaleTimeString();
+
+    output += `<p>${tz} : ${time}</p>`;
+  }
+
+  document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
