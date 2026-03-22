@@ -1,68 +1,78 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>World Time App</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #111;
-      color: white;
-    }
-    input {
-      padding: 10px;
-      width: 250px;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 20px;
-      font-size: 20px;
-    }
-  </style>
+</html>
+<head> 
+<title> my builder portfolio 🔨</title>
+<style>
+body {
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+}
+
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:10px;
+    padding:20px;
+}
+
+.gallery img {
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.05);
+}
+</style>
+
 </head>
 <body>
 
-<h1>🌍 World Time</h1>
+<p>my Builder portfolio 🛠️<p>
 
-<input type="text" id="country" placeholder="Ex: France, Japan...">
-<button onclick="getTime()">Search</button>
+<div class="gallery">
+    <img src="https://i.postimg.cc/2SDg0n7c/Screenshot-20260315-155134-com-roblox-client.jpg">
+    <img src="https://i.postimg.cc/gJTK1PFZ/Screenshot-2026-03-18-22-18-08-44-572064f74bd5f9fa804b05334aa4f912.jpg">
+</div>
 
-<div id="result"></div>
+<p>Roblox Builder🛠️  (Maps, Houses, Obby)</p>
 
-<script>
-async function getTime() {
-  let country = document.getElementById("country").value;
+<p>💰 Cheap Prices💰</p></html> </title>
+ 
 
-  // API pour récupérer timezone du pays
-  let res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
-  let data = await res.json();
-
-  if (!data || data.status === 404) {
-    document.getElementById("result").innerHTML = "Pays non trouvé ❌";
-    return;
-  }
-
-  let timezones = data[0].timezones;
-
-  let output = `<h3>${data[0].name.common}</h3>`;
-
-  for (let tz of timezones) {
-    let timeRes = await fetch(`https://worldtimeapi.org/api/timezone/${tz}`);
-    let timeData = await timeRes.json();
-
-    let time = new Date(timeData.datetime).toLocaleTimeString();
-
-    output += `<p>${tz} : ${time}</p>`;
-  }
-
-  document.getElementById("result").innerHTML = output;
-}
-</script>
-
+<p> Discord username:
+<p> nolan6776
+<p> Discord display name:
+<p> the builder🔨 </p>
 </body>
-</html>
+
+<style>
+body  {
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+}
+
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:10px;
+    padding:20px;
+}
+
+.gallery img {
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.05);
+}
+</style>
+
+</head>
+<body
